@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import JavaScript from './JavaScript1'
 
 //Create a function named addUp that takes a number as an argument. Add up all the numbers from 1 to the number you passed to the function. For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
 
@@ -125,7 +126,7 @@ console.log(middleValue(testString1))
 
 
 
-function App() {
+const App = () => {
 
   const [error, setError] = useState("")
 
@@ -150,9 +151,11 @@ function App() {
           <label>Guess A Number: </label>
           <input id="num" />
           <button onClick={submitGuess}>Guess</button>
+          <button type="refresh">Refresh</button>
           <h1>{error}</h1>
         </form>
       </div>
+      <JavaScript />
     </div>
   );
 }
