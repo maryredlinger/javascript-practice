@@ -1,5 +1,36 @@
 import React from 'react'
 
+
+//slice
+
+var arraySlice = [5,6,7,8,9]
+var arraySliceNew = arraySlice.slice(0,4)
+console.log(arraySliceNew)
+
+
+//remove duplicates
+var string2 = "repeat how are you repeat"
+var string1 = "repeat how are you"
+
+const duplicates = (str1, str2) => {
+  let str = str1 + " " + str2
+  let array = str.split(" ")
+  let newArr = []
+  array.map(value => {
+    if(!newArr.includes(value)){
+      newArr.push(value)
+    }
+  })
+  return newArr
+};
+let arrayJoining =(string1 + " " + string2).split(" ")
+let set = new Set(arrayJoining)
+let result = [...set]
+console.log(result)
+
+console.log(duplicates(string1, string2))
+
+
 // Create a function that takes in any array of objects and returns a new array with only those of type cat.
 // Using the same array of objects above. Create a function that returns a new array with only the names of the animals.
 

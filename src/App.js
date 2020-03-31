@@ -2,6 +2,86 @@ import React, {useState} from 'react';
 import JavaScript from './JavaScript1';
 import JSClass from './JSClass'
 
+function compareTriplets(a, b) {
+  var total =[]
+  var totalA = 0
+  var totalB = 0
+  for(let i=0; i<a.length; i++){
+          if(a[i] > b[i]){
+              totalA= totalA + 1
+          }else if(b[i]>a[i]){
+              totalB = totalB + 1
+          } else {
+             totalB = totalB + 0
+             totalA = totalA + 0
+          }
+
+  }
+  if(totalA > totalB){
+      total.push(totalA)
+      total.push(totalB)
+  }else if(totalB > totalA){
+      total.push(totalB)
+      total.push(totalA)
+  } else {
+      total.push(1,1)
+  }
+  return total
+}
+
+var testarr1 = [1,2,3]
+var testarr2 = [3,2,1]
+
+console.log(compareTriplets(testarr1, testarr2))
+
+//Mean, Median, Mode, Standard Deviation (SD), Confidence Interval for the mean
+
+var array = [1,2,3,1 ,4,2,2,1,5]
+
+const mean = (arr) => {
+  var mean = 0
+  for (let i=0; i<arr.length; i++){
+    mean += arr[i]
+  }
+  return mean / arr.length
+}
+
+console.log(mean(array))
+
+const median = (arr) => {
+  for (let i=0; i<arr.length; i++)
+    var middleIndex = Math.floor(arr.length/2)
+    var middleValue = arr[middleIndex]
+  
+  return middleValue
+}
+console.log(median(array))
+
+function mode(numbers) {
+  // as result can be bimodal or multi-modal,
+  // the returned result is provided as an array
+  // mode of [3, 5, 4, 4, 1, 1, 2, 3] = [1, 3, 4]
+  var modes = [], count = [], i, number, maxIndex = 0;
+
+  for (i = 0; i < numbers.length; i += 1) {
+      number = numbers[i];
+      count[number] = (count[number] || 0) + 1;
+      if (count[number] > maxIndex) {
+          maxIndex = count[number];
+      }
+  }
+
+  for (i in count)
+      if (count.hasOwnProperty(i)) {
+          if (count[i] === maxIndex) {
+              modes.push(Number(i));
+          }
+      }
+
+  return modes;
+}
+
+console.log(mode(array))
 //Create a function named addUp that takes a number as an argument. Add up all the numbers from 1 to the number you passed to the function. For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
 
 const addUp = (num) => {
@@ -57,6 +137,18 @@ let set = new Set(arrJoin)
 let result = [...set]
 
 console.log(result)
+
+const noNo = (a, b) =>{
+  var c = a.concat(b)
+  let newArr = c.filter((v, i) => {
+    if(c.indexOf(v) === (i)){
+      return v
+    }
+  })
+  return newArr
+}
+
+console.log(noNo(arr1, arr2), "TEST")
 
 const noDuplicates = (arr1, arr2) => {
   var arrJoin = arr1.concat(arr2)
